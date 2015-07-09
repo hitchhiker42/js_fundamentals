@@ -63,10 +63,10 @@ VM306:6 Spirited Awaylasts for 100minutes. The stars are miyazaki,people
 var movies = {name: "Spirited Away", duration: 100, stars: ["miyazaki", "people"]}
 
 function imdb(movie) {
+	var arr = new Array();
 	for (var i = 0; i < movie.stars.length ; i++) {
-		var arr = new Array();
+		
 		arr.push(movie.stars[i]);
-		console.log(arr)
 	}
 	console.log (movies.name + "lasts for " + movies.duration + "minutes. The stars are " + arr)
 }
