@@ -1,27 +1,75 @@
-// Exercises: Arrays
+// Exercises: Objects
 
-// EXERCISE: Your top choices
+// EXERCISE: The Recipe Card
 
-// Create an array to hold your top choices (colors, presidents, whatever).
-// For each choice, log to the screen a string like: "My #1 choice is blue."
-// Bonus: Change it to log "My 1st choice, "My 2nd choice", "My 3rd choice", picking the right suffix for the number based on what it is.
+// Never forget another recipe!
 
-var choices = ["green", "hitchhiker", "chocolate", "calle13", "nexus5", "jameela", "hafeez", "zenusha"]
-for (var i = 0; i < choices.length; i++)
-{
-	var choice = i+1
-		if (i == 0) { console.log ("My " + choice + "st" + "choice is " + choices[i]) }
-		else if (i == 1) { console.log ("My " + choice + "nd" + "choice is " + choices[i]) }
-		else if (i == 2) { console.log ("My " + choice + "rd" + "choice is " + choices[i]) }	
-			else { console.log ( "My "+ choice+"th" + "choice is " + choices[i]) ;}
+// Create an object to hold information on your favorite recipe. It should have properties for title (a string), servings (a number), and ingredients (an array of strings).
+// On separate lines (one console.log statement for each), log the recipe information so it looks like:
+// Mole
+// Serves: 2
+// Ingredients:
+// cinnamon
+// cumin
+// cocoa
+
+var FavRecipe = {title: "Ghee Rice", serves: 1, ingredients: ["rice", "ghee", "cloves", "cinnamon"]}
+
+for (key in FavRecipe) {
+console.log(key + ":" + FavRecipe[key]);
+}
+VM7114:3 title:Ghee Rice
+VM7114:3 serves:1
+VM7114:3 ingredients:rice,ghee,cloves,cinnamon
+
+
+// EXERCISE: The Reading List
+
+// Keep track of which books you read and which books you want to read!
+
+// Create an array of objects, where each object describes a book and has properties for the title (a string), author (a string), and alreadyRead (a boolean indicating if you read it yet).
+// Iterate through the array of books. For each book, log the book title and book author like so: "The Hobbit by J.R.R. Tolkien".
+// Now use an if/else statement to change the output depending on whether you read it yet or not. If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolkien', and if not, log a string like 'You still need to read "The Lord of the Rings" by J.R.R. Tolkien.'
+
+var books = [ {name: "the cellist of Sarajevo", author: "steven galloway", alreadyRead: true} , {name: "solaris", author: "iunno", alreadyRead: false}]
+
+for (var i = 0; i < books.length; i++) {
+
+	if (books[i].alreadyRead === true) {
+	console.log( books[i].name + " by " + books[i].author + " You done read this book")
+}
+	else {console.log(books[i].name + " by " + books[i].author + " You gotta read this book")}
 }
 
-My 1stchoice is green
-VM6201:7 My 2ndchoice is hitchhiker
-VM6201:8 My 3rdchoice is chocolate
-VM6201:9 My 4thchoice is calle13
-VM6201:9 My 5thchoice is nexus5
-VM6201:9 My 6thchoice is jameela
-VM6201:9 My 7thchoice is hafeez
-VM6201:9 My 8thchoice is zenusha
+the cellist of Sarajevo by steven galloway You done read this book
+VM8207:9 solaris by iunno You gotta read this book
+
+// EXERCISE: The Movie Database
+
+// It's like IMDB, but much much smaller!
+
+// Create an object to store the following information about your favorite movie: title (a string), duration (a number), and stars (an array of strings).
+// Create a function to print out the movie information like so: "Puff the Magic Dragon lasts for 30 minutes. Stars: Puff, Jackie, Living Sneezes."
+
+var movies = {name: "Spirited Away", duration: 100, stars: ["miyazaki", "people"]}
+
+function imdb(movie) {
+	console.log (movies.name + "lasts for " + movies.duration + "minutes. The stars are " + movies.stars);
+		}
 undefined
+imdb(movies)
+VM306:6 Spirited Awaylasts for 100minutes. The stars are miyazaki,people
+
+var movies = {name: "Spirited Away", duration: 100, stars: ["miyazaki", "people"]}
+
+function imdb(movie) {
+	var arr = new Array();
+	for (var i = 0; i < movie.stars.length ; i++) {
+		
+		arr.push(movie.stars[i]);
+	}
+	console.log (movies.name + "lasts for " + movies.duration + "minutes. The stars are " + arr)
+}
+
+
+
